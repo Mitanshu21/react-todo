@@ -8,7 +8,7 @@ const TodoForm = (props) => {
 
   useEffect(() => {
     inputRef.current.focus();
-  }, []);
+  });
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -16,7 +16,7 @@ const TodoForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const dt = new Date().getTime();
+    const dt = props.edit ? props.edit.id : new Date().getTime();
 
     props.onSubmit({
       id: dt,
@@ -37,6 +37,8 @@ const TodoForm = (props) => {
               name="text"
               ref={inputRef}
               className="todo-input-edit"
+              maxLength={300}
+              autoComplete="off"
             />
           </>
         ) : (
@@ -49,6 +51,8 @@ const TodoForm = (props) => {
               name="text"
               className="todo-input"
               ref={inputRef}
+              maxLength={300}
+              autoComplete="off"
             />
           </>
         )}

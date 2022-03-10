@@ -17,17 +17,16 @@ function TodoListItem({
   return (
     <>
       <div className="todo-list-item">
-        {todo.isComplete ? (
-          <RiCheckboxCircleFill
-            onClick={() => completeTodo(todo.id)}
-            className="todo-mark-icon"
-          />
-        ) : (
-          <RiCheckboxBlankCircleLine
-            onClick={() => completeTodo(todo.id)}
-            className="todo-mark-icon"
-          />
-        )}
+        <div className="todo-mark-icon">
+          {todo.isComplete ? (
+            <RiCheckboxCircleFill onClick={() => completeTodo(todo.id)} />
+          ) : (
+            <RiCheckboxBlankCircleLine
+              onClick={() => completeTodo(todo.id)}
+              // className="todo-mark-icon"
+            />
+          )}
+        </div>
 
         <div className="todo-item">
           {todo.isComplete ? (

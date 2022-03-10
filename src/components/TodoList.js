@@ -60,7 +60,6 @@ const TodoList = ({ todos, completeTodo, removeTodo, updateTodo }) => {
                   todo={todo}
                   completeTodo={completeTodo}
                   removeTodo={removeTodo}
-                  submitUpdate={submitUpdate}
                 />
               </div>
             ))}
